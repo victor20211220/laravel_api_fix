@@ -1,0 +1,810 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "FM Display PHP/JSON Rest API",
+        "description": "FM Display PHP/JSON Rest API Endpoint Specification",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/hlola/contextual/isipho": {
+            "post": {
+                "tags": [
+                    "API Reference"
+                ],
+                "summary": "contextual isipho",
+                "description": "Create a new contextual_clicks record",
+                "operationId": "contextual_isipho",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "publisherKey",
+                                    "userKey",
+                                    "keywordKey",
+                                    "advertKey",
+                                    "impressionKey",
+                                    "sessionKey"
+                                ],
+                                "properties": {
+                                    "publisherKey": {
+                                        "type": "string",
+                                        "example": "HD3kd92JA"
+                                    },
+                                    "userKey": {
+                                        "type": "string",
+                                        "example": "Dhd38FDHD"
+                                    },
+                                    "keywordKey": {
+                                        "type": "string",
+                                        "example": "dJVmVEG2T"
+                                    },
+                                    "advertKey": {
+                                        "type": "string",
+                                        "example": "wCkbp9XHF"
+                                    },
+                                    "impressionKey": {
+                                        "type": "string",
+                                        "example": "D2aEHp8bM"
+                                    },
+                                    "sessionKey": {
+                                        "type": "string",
+                                        "example": "D2aEHp8bM"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "Success"
+                                        },
+                                        "clickKey": {
+                                            "type": "string",
+                                            "example": "I9gJM3eDg"
+                                        },
+                                        "dateCreated": {
+                                            "type": "string",
+                                            "example": "2022-07-11 05:15:29"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Failed",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "Failed"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/hlola/contextual/mamatheka": {
+            "post": {
+                "tags": [
+                    "API Reference"
+                ],
+                "summary": "contextual mamatheka",
+                "description": "Create a new contextual_impressions record",
+                "operationId": "contextual_mamatheka",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "publisherKey",
+                                    "sessionKey",
+                                    "userKey",
+                                    "keywordKey",
+                                    "advertKey"
+                                ],
+                                "properties": {
+                                    "publisherKey": {
+                                        "type": "string",
+                                        "example": "HD3kd92JA"
+                                    },
+                                    "sessionKey": {
+                                        "type": "string",
+                                        "example": "AJD18Sgh1"
+                                    },
+                                    "userKey": {
+                                        "type": "string",
+                                        "example": "Dhd38FDHD"
+                                    },
+                                    "keywordKey": {
+                                        "type": "string",
+                                        "example": "dJVmVEG2T"
+                                    },
+                                    "advertKey": {
+                                        "type": "string",
+                                        "example": "wCkbp9XHF"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "Success"
+                                        },
+                                        "impressionKey": {
+                                            "type": "string",
+                                            "example": "I9gJM3eDg"
+                                        },
+                                        "dateCreated": {
+                                            "type": "string",
+                                            "example": "2022-07-11 05:15:29"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Failed",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "Failed"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/hlola/contextual/funa": {
+            "post": {
+                "tags": [
+                    "API Reference"
+                ],
+                "summary": "contextual funa",
+                "description": "Output data from contextual_adverts db table",
+                "operationId": "contextual_funa",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "publisherKey",
+                                    "keywordText"
+                                ],
+                                "properties": {
+                                    "publisherKey": {
+                                        "type": "string",
+                                        "example": "HD3kd92JA"
+                                    },
+                                    "keywordText": {
+                                        "type": "string",
+                                        "example": "submissive,dominant,pet,prey,switch"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "Success"
+                                        },
+                                        "keywordKey": {
+                                            "type": "string",
+                                            "example": "dJVmVEG2T"
+                                        },
+                                        "contextualDisplay": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "advertPosition": {
+                                                        "type": "string"
+                                                    },
+                                                    "advertKey": {
+                                                        "type": "string"
+                                                    },
+                                                    "advertImagePath": {
+                                                        "type": "string"
+                                                    },
+                                                    "advertUrl": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "example": [
+                                                {
+                                                    "advertPosition": "1",
+                                                    "advertKey": "jbc7eFDdR",
+                                                    "advertImagePath": "https://picsum.photos/536/354",
+                                                    "advertUrl": "https://example.com"
+                                                },
+                                                {
+                                                    "advertPosition": "2",
+                                                    "advertKey": "wCkbp9XHF",
+                                                    "advertImagePath": "https://picsum.photos/536/354",
+                                                    "advertUrl": "https://example.com"
+                                                },
+                                                {
+                                                    "advertPosition": "3",
+                                                    "advertKey": "qYv4E9SDf",
+                                                    "advertImagePath": "https://picsum.photos/536/354",
+                                                    "advertUrl": "https://example.com"
+                                                },
+                                                {
+                                                    "advertPosition": "4",
+                                                    "advertKey": "qH92p7s28",
+                                                    "advertImagePath": "https://picsum.photos/536/354",
+                                                    "advertUrl": "https://example.com"
+                                                },
+                                                {
+                                                    "advertPosition": "5",
+                                                    "advertKey": "nf8kgh2Wt",
+                                                    "advertImagePath": "https://picsum.photos/536/354",
+                                                    "advertUrl": "https://example.com"
+                                                }
+                                            ]
+                                        },
+                                        "dateCreated": {
+                                            "type": "string",
+                                            "example": "2022-07-11 05:15:29"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Failed",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "Failed"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/hlola/global/isipho": {
+            "post": {
+                "tags": [
+                    "API Reference"
+                ],
+                "summary": "global isipho",
+                "description": "Create a new global_clicks record",
+                "operationId": "global_isipho",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "publisherKey",
+                                    "sessionKey",
+                                    "advertKey",
+                                    "impressionKey"
+                                ],
+                                "properties": {
+                                    "publisherKey": {
+                                        "type": "string",
+                                        "example": "HD3kd92JA"
+                                    },
+                                    "sessionKey": {
+                                        "type": "string",
+                                        "example": "AJD18Sgh1"
+                                    },
+                                    "advertKey": {
+                                        "type": "string",
+                                        "example": "wCkbp9XHF"
+                                    },
+                                    "impressionKey": {
+                                        "type": "string",
+                                        "example": "sQ67rfADk"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "Success"
+                                        },
+                                        "clickKey": {
+                                            "type": "string",
+                                            "example": "I9gJM3eDg"
+                                        },
+                                        "dateCreated": {
+                                            "type": "string",
+                                            "example": "2022-07-11 05:15:29"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Failed",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "Failed"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/hlola/global/mamatheka": {
+            "post": {
+                "tags": [
+                    "API Reference"
+                ],
+                "summary": "global mamatheka",
+                "description": "Create a new global_impressions record",
+                "operationId": "global_mamatheka",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "publisherKey",
+                                    "sessionKey",
+                                    "campaignKey",
+                                    "advertKey",
+                                    "impressionsUrl"
+                                ],
+                                "properties": {
+                                    "publisherKey": {
+                                        "type": "string",
+                                        "example": "HD3kd92JA"
+                                    },
+                                    "sessionKey": {
+                                        "type": "string",
+                                        "example": "AJD18Sgh1"
+                                    },
+                                    "campaignKey": {
+                                        "type": "string",
+                                        "example": "22L2CyxmQ"
+                                    },
+                                    "advertKey": {
+                                        "type": "string",
+                                        "example": "3ZBpZtHqp"
+                                    },
+                                    "impressionsUrl": {
+                                        "type": "string",
+                                        "example": "exampleimpressionurl.com"
+                                    },
+                                    "impressionsBackfill": {
+                                        "type": "string",
+                                        "example": "FALSE"
+                                    },
+                                    "backfillKey": {
+                                        "type": "string",
+                                        "example": ""
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "Success"
+                                        },
+                                        "impressionKey": {
+                                            "type": "string",
+                                            "example": "I9gJM3eDg"
+                                        },
+                                        "dateCreated": {
+                                            "type": "string",
+                                            "example": "2022-07-11 05:15:29"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Failed",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "Failed"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/hlola/global/ubambo": {
+            "post": {
+                "tags": [
+                    "API Reference"
+                ],
+                "summary": "global ubambo",
+                "description": "Create a new global_sessions record",
+                "operationId": "global_ubambo",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "publisherKey",
+                                    "sessionIp",
+                                    "sessionOs",
+                                    "sessionBrowser",
+                                    "sessionCountry",
+                                    "userInboundUrl",
+                                    "userLandingUrl"
+                                ],
+                                "properties": {
+                                    "publisherKey": {
+                                        "type": "string",
+                                        "example": "HD3kd92JA"
+                                    },
+                                    "sessionIp": {
+                                        "type": "string",
+                                        "example": "111.111.111"
+                                    },
+                                    "sessionOs": {
+                                        "type": "string",
+                                        "example": "ANDROID"
+                                    },
+                                    "sessionBrowser": {
+                                        "type": "string",
+                                        "example": "CHROME"
+                                    },
+                                    "sessionCountry": {
+                                        "type": "string",
+                                        "example": "USA"
+                                    },
+                                    "userInboundUrl": {
+                                        "type": "string",
+                                        "example": "https://inbound.com"
+                                    },
+                                    "userLandingUrl": {
+                                        "type": "string",
+                                        "example": "https://landing.com"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "Success"
+                                        },
+                                        "sessionKey": {
+                                            "type": "string",
+                                            "example": "I9gJM3eDg"
+                                        },
+                                        "userKey": {
+                                            "type": "string",
+                                            "example": "xngY1vGCF"
+                                        },
+                                        "dateCreated": {
+                                            "type": "string",
+                                            "example": "2022-07-11 05:15:29"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Failed",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "Failed"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/hlola/global/ubambo/check": {
+            "post": {
+                "tags": [
+                    "API Reference"
+                ],
+                "summary": "global ubambo check",
+                "description": "Output data from global_sessions db table",
+                "operationId": "global_ubambo_check",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "publisherKey",
+                                    "sessionKey"
+                                ],
+                                "properties": {
+                                    "publisherKey": {
+                                        "type": "string",
+                                        "example": "HD3kd92JA"
+                                    },
+                                    "sessionKey": {
+                                        "type": "string",
+                                        "example": "YaQb39PQj"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "Success"
+                                        },
+                                        "sessionKey": {
+                                            "type": "string",
+                                            "example": "I9gJM3eDg"
+                                        },
+                                        "userKey": {
+                                            "type": "string",
+                                            "example": "xngY1vGCF"
+                                        },
+                                        "dateCreated": {
+                                            "type": "string",
+                                            "example": "2022-07-11 05:15:29"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/hlola/global/funa": {
+            "post": {
+                "tags": [
+                    "API Reference"
+                ],
+                "summary": "global funa",
+                "description": "Output data from global_adverts db table",
+                "operationId": "global_funa",
+                "requestBody": {
+                    "description": "Pass user credentials",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "publisherKey"
+                                ],
+                                "properties": {
+                                    "publisherKey": {
+                                        "type": "string",
+                                        "example": "HD3kd92JA"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "Success"
+                                        },
+                                        "publisherKey": {
+                                            "type": "string",
+                                            "example": "I9gJM3eDg"
+                                        },
+                                        "globalDisplay": {
+                                            "type": "array",
+                                            "items": {
+                                                "properties": {
+                                                    "advertPosition": {
+                                                        "type": "string"
+                                                    },
+                                                    "advertKey": {
+                                                        "type": "string"
+                                                    },
+                                                    "advertImagePath": {
+                                                        "type": "string"
+                                                    },
+                                                    "advertUrl": {
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "type": "object"
+                                            },
+                                            "example": [
+                                                {
+                                                    "advertPosition": "1",
+                                                    "advertKey": "jbc7eFDdR",
+                                                    "advertImagePath": "https://picsum.photos/536/354",
+                                                    "advertUrl": "https://example.com"
+                                                },
+                                                {
+                                                    "advertPosition": "2",
+                                                    "advertKey": "wCkbp9XHF",
+                                                    "advertImagePath": "https://picsum.photos/536/354",
+                                                    "advertUrl": "https://example.com"
+                                                },
+                                                {
+                                                    "advertPosition": "3",
+                                                    "advertKey": "qYv4E9SDf",
+                                                    "advertImagePath": "https://picsum.photos/536/354",
+                                                    "advertUrl": "https://example.com"
+                                                },
+                                                {
+                                                    "advertPosition": "4",
+                                                    "advertKey": "qH92p7s28",
+                                                    "advertImagePath": "https://picsum.photos/536/354",
+                                                    "advertUrl": "https://example.com"
+                                                },
+                                                {
+                                                    "advertPosition": "5",
+                                                    "advertKey": "nf8kgh2Wt",
+                                                    "advertImagePath": "https://picsum.photos/536/354",
+                                                    "advertUrl": "https://example.com"
+                                                }
+                                            ]
+                                        },
+                                        "dateCreated": {
+                                            "type": "string",
+                                            "example": "2022-07-11 05:15:29"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Failed",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "example": "Failed"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
